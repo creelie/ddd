@@ -1,0 +1,10 @@
+{
+  "title": "Influence Bounds for Arbitrary Product Measures",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "creators": [{"name": "Bhattacharjee, Deep", "orcid": "0000-0003-0466-750X", "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"}],
+  "description": "Every bounded function of low interaction degree on a finite product space with an arbitrary product measure has a coordinate whose influence is at least a fixed power of its variance, with constants independent of all atom probabilities; consequently low-degree functions are approximated by shallow deterministic decision trees. Self-contained proofs.",
+  "keywords": ["coordinate influence", "product measures", "low-degree functions", "quantum query complexity"],
+  "license": "MIT"
+}

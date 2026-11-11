@@ -1,0 +1,40 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag, e.g. v1.0.0"
+        required: true
+        default: "v1.0.0"
+      target:
+        description: "Branch or commit to tag"
+        required: true
+        default: "main"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target }}
+      - name: Check the release files
+        run: |
+          for f in dist/influence-bounds-product-measures.pdf \
+                   dist/influence-bounds-product-measures-tex.zip; do
+            test -s "$f" || { echo "missing $f"; exit 1; }
+          done
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+          TARGET: ${{ inputs.target }}
+        run: |
+          gh release create "$TAG" dist/* \
+            --target "$TARGET" \
+            --title "$TAG: Influence Bounds for Arbitrary Product Measures" \
+            --notes "Influence Bounds for Arbitrary Product Measures, by Deep Bhattacharjee: paper (PDF) and LaTeX source with the exact-check program."
