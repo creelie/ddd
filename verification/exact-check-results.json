@@ -1,0 +1,13 @@
+{
+  "arithmetic": "exact fractions from Python's standard library",
+  "scope": "finite checks supplement the analytic proof",
+  "boolean_pair_checks": 828,
+  "conditional_orientation_cubes": 17644,
+  "alphabet_pair_checks": 64,
+  "query_potential_checks": 2412,
+  "linear_equalities": 8,
+  "wing_matrix_and_permutation_checks": 278,
+  "trigonometric_coefficient_checks": 64,
+  "certificate_constant_identity": "passed exactly after squaring",
+  "status": "all checks passed"
+}
